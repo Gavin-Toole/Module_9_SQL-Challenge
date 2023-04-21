@@ -24,14 +24,13 @@ CREATE TABLE "dept_manager" (
 CREATE TABLE "employees" (
     "emp_no" INTEGER   NOT NULL,
     "emp_title_id" VARCHAR   NOT NULL,
-    "birth_date" INTEGER   NOT NULL,
+    "birth_date" VARCHAR   NOT NULL,
     "first_name" VARCHAR   NOT NULL,
     "last_name" VARCHAR   NOT NULL,
     "sex" VARCHAR   NOT NULL,
     "hire_date" VARCHAR   NOT NULL,
     CONSTRAINT "pk_employees" PRIMARY KEY (
-        "emp_no"
-     )
+        "emp_no" )
 );
 
 CREATE TABLE "salaries" (
@@ -59,6 +58,5 @@ REFERENCES "employees" ("emp_no");
 ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
-ALTER TABLE "titles" ADD CONSTRAINT "fk_titles_titles_id" FOREIGN KEY("titles_id")
+ALTER TABLE "titles" ADD CONSTRAINT "fk_titles_title_id" FOREIGN KEY("title_id")
 REFERENCES "employees" ("emp_title_id");
-
