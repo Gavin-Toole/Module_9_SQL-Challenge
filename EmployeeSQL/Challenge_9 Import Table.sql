@@ -2,6 +2,9 @@
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/ck7izx
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
+-- Check if table exists and import departments
+
+DROP TABLE IF EXISTS departments CASCADE;
 
 CREATE TABLE "departments" (
     "dept_no" VARCHAR   NOT NULL,
@@ -11,15 +14,33 @@ CREATE TABLE "departments" (
      )
 );
 
+SELECT * FROM departments;
+
+-- Check if table exists and import dept_emp
+
+DROP TABLE IF EXISTS dept_emp CASCADE;
+
 CREATE TABLE "dept_emp" (
     "emp_no" INTEGER   NOT NULL,
     "dept_no" VARCHAR   NOT NULL
 );
 
+SELECT * FROM dept_emp;
+
+-- Check if table exists and import dept_manager
+
+DROP TABLE IF EXISTS dept_manager CASCADE;
+
 CREATE TABLE "dept_manager" (
     "dept_no" VARCHAR   NOT NULL,
     "emp_no" INTEGER   NOT NULL
 );
+
+SELECT * FROM dept_manager;
+
+-- Check if table exists and import employees
+
+DROP TABLE IF EXISTS employees CASCADE;
 
 CREATE TABLE "employees" (
     "emp_no" INTEGER   NOT NULL,
@@ -34,10 +55,22 @@ CREATE TABLE "employees" (
      )
 );
 
+SELECT * FROM employees;
+
+-- Check if table exists and import salaries
+
+DROP TABLE IF EXISTS salaries CASCADE;
+
 CREATE TABLE "salaries" (
     "emp_no" INTEGER   NOT NULL,
     "salary" INTEGER   NOT NULL
 );
+
+SELECT * FROM salaries;
+
+-- Check if table exists and import titles
+
+DROP TABLE IF EXISTS titles CASCADE;
 
 CREATE TABLE "titles" (
     "title_id" VARCHAR   NOT NULL,
@@ -46,6 +79,10 @@ CREATE TABLE "titles" (
         "title_id"
      )
 );
+
+SELECT * FROM titles
+
+-- Alter tables for foreign keys
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
