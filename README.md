@@ -1,7 +1,7 @@
 # Module_9_SQL-Challenge
 
 Instructions
-    This Challenge is divided into three parts: data modeling, data engineering, and data analysis.
+    This Challenge is divided into three parts: data modelling, data engineering, and data analysis.
 
 Data Modeling
     Inspect the CSV files, and then sketch an Entity Relationship Diagram of the tables. To create the sketch, feel free to use a tool like QuickDBDLinks to an external site..
@@ -33,3 +33,10 @@ Data Analysis
     List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
     List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
+
+Files Submitted:
+	Source_Data folder contains all CSV files
+	ERD png file QuickDBD - QuickDBD-Module 9 SQL Challenge.png - created from https://app.quickdatabasediagrams.com/
+	2 sql files;
+		1 Challenge 9_Import_Table.sql
+		2 Challenge 9_Queries
